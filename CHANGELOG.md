@@ -2,6 +2,10 @@
 
 ## 0.78.1 — Unreleased
 
+### Fixed
+
+- TypeSafe: send a browser User-Agent so Cloudflare no longer blocks Linux requests (the default user agent contains `curl/`), which made valid sessions look expired (#4648).
+
 ## 0.78.0 — 2026-10-19
 
 ### Highlights
