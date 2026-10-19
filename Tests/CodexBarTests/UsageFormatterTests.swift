@@ -577,6 +577,7 @@ struct UsageFormatterTests {
             ("NZD", "NZ$", 2), ("SEK", "SEK", 2), ("NOK", "NOK", 2), ("DKK", "DKK", 2),
             ("PLN", "PLN", 2), ("BRL", "R$", 2), ("MXN", "MX$", 2), ("ZAR", "ZAR", 2),
             ("THB", "THB", 2), ("IDR", "IDR", 0), ("VND", "₫", 0), ("UAH", "UAH", 2),
+            ("ILS", "₪", 2),
         ]
         for currency in addedCurrencies {
             let rate = try #require(exchange.rate(for: currency.code))
@@ -632,7 +633,7 @@ struct UsageFormatterTests {
         #expect(CurrencyExchange.requiresLiveRates(preferredCurrencyCode: " try "))
         #expect(CurrencyExchange.requiresLiveRates(preferredCurrencyCode: "NZD"))
         #expect(CurrencyExchange.requiresLiveRates(preferredCurrencyCode: " nzd "))
-        for code in ["SEK", "NOK", "DKK", "PLN", "BRL", "MXN", "ZAR", "THB", "IDR", "VND", "UAH"] {
+        for code in ["SEK", "NOK", "DKK", "PLN", "BRL", "MXN", "ZAR", "THB", "IDR", "VND", "UAH", "ILS"] {
             #expect(CurrencyExchange.requiresLiveRates(preferredCurrencyCode: code))
             #expect(CurrencyExchange.requiresLiveRates(preferredCurrencyCode: " \(code.lowercased()) "))
         }
@@ -648,7 +649,7 @@ struct UsageFormatterTests {
         #expect(exchange.convert(usdAmount: 10, to: "XYZ") == nil)
     }
 
-    @Test(arguments: ["NZD", "SEK", "NOK", "DKK", "PLN", "BRL", "MXN", "ZAR", "THB", "IDR", "VND", "UAH"])
+    @Test(arguments: ["NZD", "SEK", "NOK", "DKK", "PLN", "BRL", "MXN", "ZAR", "THB", "IDR", "VND", "UAH", "ILS"])
     func `additional currencies have offline rates and normalized conversions`(_ code: String) throws {
         let exchange = CurrencyExchange(defaults: InMemoryUserDefaults())
         #expect(CurrencyExchange.supportedCurrencies.contains(code))
