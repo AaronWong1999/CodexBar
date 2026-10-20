@@ -13,6 +13,7 @@
 
 - Settings: add Israeli new shekel (`ILS`, `₪`) to Preferred Currency with daily exchange rates and offline conversion (#4646). Thanks @elijahfriedman!
 - TypeSafe: send a browser User-Agent so Cloudflare no longer blocks Linux requests (the default user agent contains `curl/`), which made valid sessions look expired (#4648). Thanks @johan456789!
+- CLI: accept catalog provider IDs in `--provider`, and keep Linux custom-provider results matched to the requested provider (#4643). Thanks @quantmind-br!
 
 ## 0.78.0 — 2026-10-19
 
