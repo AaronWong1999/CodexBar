@@ -2,6 +2,10 @@
 
 ## 0.78.1 — Unreleased
 
+### Added
+
+- Settings: add Israeli new shekel (`ILS`, `₪`) to Preferred Currency with daily exchange rates and offline conversion (#4646). Thanks @elijahfriedman!
+
 ## 0.78.0 — 2026-10-19
 
 ### Highlights
