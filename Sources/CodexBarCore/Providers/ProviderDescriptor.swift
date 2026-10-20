@@ -459,17 +459,12 @@ public enum ProviderDescriptorRegistry {
     }
 
     public static var cliNameMap: [String: UsageProvider] {
-        var map: [String: UsageProvider] = [:]
+        var map = Dictionary(uniqueKeysWithValues: self.all.map { ($0.id.rawValue, $0.id) })
         for descriptor in self.all {
             map[descriptor.cli.name] = descriptor.id
             for alias in descriptor.cli.aliases {
                 map[alias] = descriptor.id
             }
-        }
-        // Machine-readable output such as `config providers --format json` reports raw IDs, so they
-        // must round-trip into `--provider`. CLI names and aliases keep precedence on any overlap.
-        for descriptor in self.all where map[descriptor.id.rawValue] == nil {
-            map[descriptor.id.rawValue] = descriptor.id
         }
         return map
     }
