@@ -9,6 +9,9 @@
 - Vercel: recognize personal budgets with native or prefixed user IDs and label monetary usage as spend (#4650, #4623). Thanks @sf-jin-ku!
 - Linux CLI: keep FoundationXML (`libxml2.so.2`) out of the glibc CLI again by validating plugin SVG icons only on macOS, so the CLI starts on Ubuntu 26.04 and a CI check now fails any build that links libxml2 (#4652, #4653). Thanks @simonsteiner and @harjothkhara!
 - Codex: stop hidden OpenAI dashboard pages at the refresh deadline, including stalled page preparation and JavaScript, while retaining verified API usage (#4641, #4642, #4645). Thanks @mchami02 and @enzonaute!
+### Added
+
+- Settings: add Israeli new shekel (`ILS`, `₪`) to Preferred Currency with daily exchange rates and offline conversion (#4646). Thanks @elijahfriedman!
 
 ## 0.78.0 — 2026-10-19
 
