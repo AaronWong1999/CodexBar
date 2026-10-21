@@ -320,6 +320,7 @@ CLI install:
 ## Status bar & terminal integration
 - [showy-quota](https://github.com/enieuwy/showy-quota) — always-on AI plan quota strips for SketchyBar, tmux, and Zellij (standalone WASM plugin), built on `codexbar serve` / the bundled CLI.
 - [AI Usage Limits](https://github.com/lenadweb/stream-deck-ai-limits) — Elgato Stream Deck integration for macOS: shows a selected CodexBar provider, account, and configurable quota or payload metrics on keys and Stream Deck+ dials, using local `codexbar serve`.
+- [ccx](https://github.com/aaronwong1999/ccx) — macOS menu bar app that moves a coding task between Claude Code and Codex with its full context; reads `codexbar usage --format json` to warn before either side's 5-hour window runs out and offer the switch in one click.
 
 ## Phone & web
 
